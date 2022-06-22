@@ -1,0 +1,25 @@
+{
+  "distributionOrder": {
+      "salesOrderNbr": "98874755",
+      "deliveryEndDttm": "11/04/2019 00:00",
+      "deliveryOptions": "02",
+      "deliveryStartDttm": "11/04/2019 00:00",
+      "destinationFacilityAliasID": "1501",
+      "distributionOrderID": "121672312470",
+      "localSaleName": "FALABELLA",
+      "orderType": "PED",
+      "orderedDttm": "11/04/2019 00:00",
+      "originFacilityAliasID": "2000",
+      "lineItem": [
+          {
+              "allocationSourceType": "PO",
+              "description": "430",
+              "doLineNbr": "430",
+              "itemName": "6363176",
+              "orderQty": "5",
+              "subOrderID": "76896",
+              "unitMonetaryValue": "0"
+          }
+      ]
+  }
+}

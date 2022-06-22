@@ -8,17 +8,18 @@
   "dependencies": {
     "chai-json-schema-ajv": "^5.0.0",
     "faker": "^4.1.0",
-    "log4js": "^4.4.0",
-    "mochawesome": "^3.0.3"
+    "log4js": "^4.5.1",
+    "mochawesome": "^3.1.2",
+    "supertest": "^6.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.5.3",
-    "request": "^2.88.0",
     "npm": "^6.4.1",
-    "request-promise": "^4.2.2"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
   },
   "scripts": {
-    "test": "test/run.sh"
+    "test": "test/DO-UAT/run.sh"
   }
 }

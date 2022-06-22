@@ -6,27 +6,29 @@
 const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should;
-const request = require("../../utils/httpServer");
-const config = require("../../config");
-const header = require('../../utils/header');
+const request = require("../../../utils/httpServer");
+const config = require("../../../config");
+const header = require('../../../utils/data/headers/header');
 
 /* to log the info, require below modules */
 var log4js = require("log4js");
-var log = require("../../utils/logger")
+var log = require("../../../utils/logger")
 log4js.configure(log.logging());
 var logger = log4js.getLogger();
 
 
-describe("GET Service API ", () => {
+describe("GET DO", () => {
     
     let baseUrl = config.baseUrl;
     let url;
     let headers = header.plainHeader();
 
-    it("verify the status code is 200 and should contain at leats 100 records ", (done) => {
+    it("Verify the status code is 200 and should contain 1 DO Number ", (done) => {
         logger.info("GET Service API TEST Starts")
-        let uri = "/posts";
-        url = baseUrl + uri;
+        let type= "/distribution-order";
+        let doNumber = "/122500331443";
+        let uri = "?country=CL&commerce=Falabella";
+        url = baseUrl + type +doNumber + uri;
         console.log("url is", url)
         request
             .requestPromiseQuery(url, 'GET', headers)
@@ -34,18 +36,19 @@ describe("GET Service API ", () => {
                 //console.log(response.body)
                 logger.info("Number of Records in GET Service API with url ", url, "is ", response.body.length)
                 expect(response.statusCode).to.equal(200);
-                expect(response.body.length).to.be.at.least(100)
+                //expect(response.body.length).to.be.at.least(100)
             })
             .then(() => done(), done)
             .catch((error) => {
                 done(error);
             });
     })
-
+/*
     it(" verify the response schema", (done) => {
-        let uri = "/posts";
-
-        url = baseUrl + uri;
+        let type= "/distribution-order";
+        let doNumber = "/122500331443";
+        let uri = "?country=CL&commerce=Falabella";
+        url = baseUrl + type + doNumber + uri;
         console.log("url is", url)
         logger.info(" verify the response schema ")
         request
@@ -54,18 +57,21 @@ describe("GET Service API ", () => {
                 logger.info("status code in GET Service API with url ", url, "is ", JSON.stringify(response.statusCode))
                 expect(response.statusCode).to.equal(200);
                 expect(response.body).to.be.an.instanceof(Object);
-                response.body.every(i => expect(i).to.have.all.keys('body', 'id', 'title', 'userId'))
+                //response.body(i => expect(i).to.have.keys('distributionOrderID'))
+                //expect(body1.text()).to.include('distributionOrderID');
+                response.body.every(i => expect(i).to.have.all.keys("distributionOrder"))//, 'id', 'title', 'userId'))
             })
             .then(() => done(), done)
             .catch((error) => {
                 done(error);
             });
     })
-
+*/
     it(" verify the status code is 200 and api returns only 1 record", (done) => {
-        let uri = "/posts/1";
-
-        url = baseUrl + uri;
+        let type= "/distribution-order";
+        let doNumber = "/122500331443";
+        let uri = "?country=CL&commerce=Falabella";
+        url = baseUrl + type +doNumber + uri;
         console.log("url is", url)
         request
             .requestPromiseQuery(url, 'GET', headers)
@@ -75,7 +81,7 @@ describe("GET Service API ", () => {
                 logger.info("response in GET Service API when querying 1 record  with url ", url, "is ", JSON.stringify(responseArray))
                 expect(response.statusCode).to.equal(200);
                 expect(responseArray.length).to.equal(1);
-                expect(response.body.id).to.equal(1)
+                //expect(response.body.id).to.equal(1)
             })
             .then(() => done(), done)
             .catch((error) => {
@@ -84,10 +90,10 @@ describe("GET Service API ", () => {
     })
 
     it(" verify the status code is 404 and log the response", (done) => {
-        let uri = "/posts/invalidPost";
-
-        url = baseUrl + uri;
-
+        let type= "/distribution-order";
+        let doNumber = "/";
+        let uri = "?country=CL&commerce=Falabella";
+        url = baseUrl + type +doNumber + uri;
         console.log("url is", url)
         request
             .requestQuery(url, "GET", headers, function (err, resp) {

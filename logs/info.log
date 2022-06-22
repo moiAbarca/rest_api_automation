@@ -1,23 +1,26 @@
-[2019-06-26T23:16:28.743] [INFO] default - GET Service API TEST Starts
-[2019-06-26T23:16:29.002] [INFO] default - Number of Records in GET Service API with url  https://jsonplaceholder.typicode.com/posts is  100
-[2019-06-26T23:16:29.005] [INFO] default -  verify the response schema 
-[2019-06-26T23:16:29.178] [INFO] default - status code in GET Service API with url  https://jsonplaceholder.typicode.com/posts is  200
-[2019-06-26T23:16:29.328] [INFO] default - response in GET Service API when querying 1 record  with url  https://jsonplaceholder.typicode.com/posts/1 is  [{"userId":1,"id":1,"title":"sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body":"quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"}]
-[2019-06-26T23:16:29.563] [INFO] default - response in GET Service API with invalid url  https://jsonplaceholder.typicode.com/posts/invalidPost is  "{}"
-[2019-06-26T23:16:29.563] [INFO] default - status code  in GET Service API with invalid url  https://jsonplaceholder.typicode.com/posts/invalidPost is  404
-[2019-06-26T23:16:29.563] [INFO] default - GET SErvice API TEST ENDS
-[2019-06-26T23:16:29.563] [INFO] default - ********************************************************************
-[2019-06-26T23:16:29.565] [INFO] default - POST Service API TEST Starts
-[2019-06-26T23:16:30.459] [INFO] default - url in post service is https://jsonplaceholder.typicode.com/posts
-[2019-06-26T23:16:30.459] [INFO] default - response in post service is {"userId":1,"title":"foo","body":"bar","id":101}
-[2019-06-26T23:16:30.459] [INFO] default - POST Service API TEST ENDS
-[2019-06-26T23:16:30.459] [INFO] default - ********************************************************************
-[2019-06-26T23:16:30.461] [INFO] default - PUT Service API TEST Starts
-[2019-06-26T23:16:31.381] [INFO] default - url in put service is https://jsonplaceholder.typicode.com/posts/1
-[2019-06-26T23:16:31.381] [INFO] default - response in put service is {"id":1,"userId":1,"title":"abc","body":"xyz"}
-[2019-06-26T23:16:31.381] [INFO] default - PUT Service API TEST ENDS
-[2019-06-26T23:16:31.381] [INFO] default - ********************************************************************
-[2019-06-26T23:16:31.382] [INFO] default - DELETE Service API TEST Starts
-[2019-06-26T23:16:32.076] [INFO] default - resonse in delete api is "{}"
-[2019-06-26T23:16:32.076] [INFO] default - DELETE Service API TEST ENDS
-[2019-06-26T23:16:32.076] [INFO] default - ********************************************************************
+[2020-12-18T11:04:46.330] [INFO] default - GET Service API TEST Starts
+[2020-12-18T11:04:46.705] [INFO] default - Number of Records in GET Service API with url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/122500331443?country=CL&commerce=Falabella is  undefined
+[2020-12-18T11:04:47.564] [INFO] default - response in GET Service API when querying 1 record  with url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/122500331443?country=CL&commerce=Falabella is  [{"distributionOrder":{"billToName":"DAVID DAVID","customerName":"ANONYMOUS MUSS","deliveryStartDttm":"11/13/2020 15:05:00","deliveryEndDttm":"11/13/2020 20:59:00","deliveryOptions":"03","designatedServiceLevelCode":"AD","designatedModeCode":"NDD","designatedCarrierCode":"BLUEEXAD","destinationFacilityAliasID":"","destinationAddressLine1":"PJE ADESSA 123","destinationAddressLine2":"","destinationAddressLine3":null,"distributionOrderID":"122500331443","documentID":"18939587-6","documentType":"RUT","doFulfillmentStatus":"Released","orderType":"PED","orderedDttm":"11/03/2020 12:17:00","originFacilityAliasID":"2000","originFacilityName":"(VENTA A DIST.)  FALABELLA RETAIL S.A.","localSaleName":"FALABELLA","salesOrderNbr":"5346146047","lineItem":[{"itemXdID":"2246421","itemXdDescription":"BRAUN-DEPILADORA BRAUN SP 3170","isCancelled":"false","allocationSourceType":"OnHand","subOrderID":"140000134367","allocationSourceId":null,"allocationSourceLineId":null,"doLineNbr":"1","orderQty":"1"}]}}]
+[2020-12-18T11:04:48.386] [INFO] default - response in GET Service API with invalid url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/?country=CL&commerce=Falabella is  "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+[2020-12-18T11:04:48.386] [INFO] default - status code  in GET Service API with invalid url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/?country=CL&commerce=Falabella is  404
+[2020-12-18T11:04:48.386] [INFO] default - GET SErvice API TEST ENDS
+[2020-12-18T11:04:48.386] [INFO] default - ********************************************************************
+[2020-12-18T11:04:48.389] [INFO] default - POST Service API TEST Starts
+[2020-12-18T11:04:48.659] [INFO] default - url in post service is https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/
+[2020-12-18T11:04:48.660] [INFO] default - response in post service is {"status":"success","data":{"insertedId":"5fdcb70087774500474d9dbb"},"message":"Success inserting data!"}
+[2020-12-18T11:04:48.660] [INFO] default - POST Service API TEST ENDS
+[2020-12-18T11:04:48.660] [INFO] default - ********************************************************************
+[2020-12-18T11:04:48.661] [INFO] default - PUT Service API TEST Starts
+[2020-12-18T11:04:48.929] [INFO] default - DELETE Service API TEST Starts
+[2020-12-18T11:04:49.161] [INFO] default - resonse in delete api is "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+[2020-12-18T11:07:26.056] [INFO] default - GET Service API TEST Starts
+[2020-12-18T11:07:26.409] [INFO] default - Number of Records in GET Service API with url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/122500331443?country=CL&commerce=Falabella is  undefined
+[2020-12-18T11:07:26.646] [INFO] default - response in GET Service API when querying 1 record  with url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/122500331443?country=CL&commerce=Falabella is  [{"distributionOrder":{"billToName":"DAVID DAVID","customerName":"ANONYMOUS MUSS","deliveryStartDttm":"11/13/2020 15:05:00","deliveryEndDttm":"11/13/2020 20:59:00","deliveryOptions":"03","designatedServiceLevelCode":"AD","designatedModeCode":"NDD","designatedCarrierCode":"BLUEEXAD","destinationFacilityAliasID":"","destinationAddressLine1":"PJE ADESSA 123","destinationAddressLine2":"","destinationAddressLine3":null,"distributionOrderID":"122500331443","documentID":"18939587-6","documentType":"RUT","doFulfillmentStatus":"Released","orderType":"PED","orderedDttm":"11/03/2020 12:17:00","originFacilityAliasID":"2000","originFacilityName":"(VENTA A DIST.)  FALABELLA RETAIL S.A.","localSaleName":"FALABELLA","salesOrderNbr":"5346146047","lineItem":[{"itemXdID":"2246421","itemXdDescription":"BRAUN-DEPILADORA BRAUN SP 3170","isCancelled":"false","allocationSourceType":"OnHand","subOrderID":"140000134367","allocationSourceId":null,"allocationSourceLineId":null,"doLineNbr":"1","orderQty":"1"}]}}]
+[2020-12-18T11:07:26.923] [INFO] default - response in GET Service API with invalid url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/?country=CL&commerce=Falabella is  "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"
+[2020-12-18T11:07:26.923] [INFO] default - status code  in GET Service API with invalid url  https://qa-api-supply-chain.falabella.com/whmg/uat/api/v2/distribution-order/?country=CL&commerce=Falabella is  404
+[2020-12-18T11:07:26.923] [INFO] default - GET SErvice API TEST ENDS
+[2020-12-18T11:07:26.924] [INFO] default - ********************************************************************
+[2020-12-18T11:07:26.925] [INFO] default - POST Service API TEST Starts
+[2020-12-18T11:07:27.185] [INFO] default - PUT Service API TEST Starts
+[2020-12-18T11:07:27.435] [INFO] default - DELETE Service API TEST Starts
+[2020-12-18T11:07:27.679] [INFO] default - resonse in delete api is "{ \"statusCode\": 404, \"message\": \"Resource not found\" }"

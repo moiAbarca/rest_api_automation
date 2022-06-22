@@ -7,15 +7,15 @@ const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
 
-const request = require("../../utils/httpServer");
-const config = require("../../config");
-const header = require('../../utils/header');
+const request = require("../../../utils/httpServer");
+const config = require("../../../config.json");
+const header = require('../../../utils/header');
 const fs = require('fs')
 const path = require('path')
 
 /* to log the info, require below modules */
 var log4js = require("log4js");
-var log = require("../../utils/logger")
+var log = require("../../../utils/logger")
 log4js.configure(log.logging());
 var logger = log4js.getLogger();
 
@@ -25,13 +25,12 @@ describe("Delete Service API ", () => {
     let url;
     let headers = header.plainHeader();
 
-    
-
     it("verify the status code is 200 and record has been deleted ", (done) => {
         logger.info("DELETE Service API TEST Starts")
-        let uri = "/posts/1";
+        let uri = "/distribution-order";
+        let doNumber = "/121672312463";
 
-        url = baseUrl + uri;
+        url = baseUrl + uri + doNumber;
         console.log("url is", url)
         request
             .requestQuery(url, "DELETE", headers, function (err, resp) {
